@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 13b75c95f34a00d4e8c04f76b73312e6, type: 3}
-  m_Name: fountinr_blue_t
+  m_Name: fountine_blue_t
   m_EditorClassIdentifier: 
   m_AnimatedSprites:
   - {fileID: 21300000, guid: 23ce3fda9b48e6c4dbcc22edb59d9f4d, type: 3}
