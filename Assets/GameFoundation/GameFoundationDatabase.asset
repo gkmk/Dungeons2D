@@ -1,0 +1,584 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-7904654559483738550
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c5d5ab9f120b74776af0cbceb16d278d, type: 3}
+  m_Name: Category_weapons
+  m_EditorClassIdentifier: 
+  m_Id: weapons
+  m_DisplayName: Weapons
+--- !u!114 &-7862747356165092517
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0045a420c8b2b474eb4c14cf512c1cb5, type: 3}
+  m_Name: Detail_playerHero_Stats
+  m_EditorClassIdentifier: 
+  m_ItemDefinition: {fileID: 6887271508390812012}
+  m_StatEntries:
+  - stat: {fileID: 8180324561091678115}
+    value:
+      m_Type: 0
+      m_IntValue: 1
+  - stat: {fileID: 2476705312563493796}
+    value:
+      m_Type: 0
+      m_IntValue: 1
+  - stat: {fileID: -7767012301083986000}
+    value:
+      m_Type: 0
+      m_IntValue: 1
+  - stat: {fileID: 112370810052723042}
+    value:
+      m_Type: 0
+      m_IntValue: 1
+--- !u!114 &-7769226187106139398
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 069acf70dc5a3428cb53df4df156ad59, type: 3}
+  m_Name: _Catalog_Transaction
+  m_EditorClassIdentifier: 
+  m_Categories:
+  - {fileID: -3671467578751036462}
+  m_Database: {fileID: 11400000}
+  m_Items:
+  - {fileID: -2916772358758911014}
+  - {fileID: 2898562373547699694}
+--- !u!114 &-7767012301083986000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 500ed5e878d975f419dc9b9f03434383, type: 3}
+  m_Name: Stat_defense
+  m_EditorClassIdentifier: 
+  m_Id: defense
+  m_DisplayName: Defense
+  m_StatValueType: 0
+--- !u!114 &-5831284636934957225
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b6736b79f77dc474c8bc820c305c2c2e, type: 3}
+  m_Name: Currency_goldCoin
+  m_EditorClassIdentifier: 
+  m_DisplayName: Gold Coin
+  m_Id: goldCoin
+  m_Categories:
+  - {fileID: -1095227292113191704}
+  m_Catalog: {fileID: -3015985782656024199}
+  m_DetailValues:
+  - {fileID: 2562539833650468713}
+  m_InitialBalance: 0
+  m_MaximumBalance: 0
+  m_Type: 0
+--- !u!114 &-5729993720074048865
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1c3c0f44711962a40b99131878afcc83, type: 3}
+  m_Name: _Catalog_Stores
+  m_EditorClassIdentifier: 
+  m_Categories:
+  - {fileID: -4958130180231182382}
+  m_Database: {fileID: 11400000}
+  m_Items:
+  - {fileID: -2998493372325328806}
+  - {fileID: -5457723504803471983}
+--- !u!114 &-5457723504803471983
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b81b157322addcd439104bd3c59b830b, type: 3}
+  m_Name: Store_weaponShop
+  m_EditorClassIdentifier: 
+  m_DisplayName: Weapon Shop
+  m_Id: weaponShop
+  m_Categories:
+  - {fileID: -4958130180231182382}
+  m_Catalog: {fileID: -5729993720074048865}
+  m_DetailValues: []
+  m_StoreItems:
+  - m_Transaction: {fileID: -2916772358758911014}
+    m_Enabled: 1
+--- !u!114 &-4958130180231182382
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c5d5ab9f120b74776af0cbceb16d278d, type: 3}
+  m_Name: Category_armory
+  m_EditorClassIdentifier: 
+  m_Id: armory
+  m_DisplayName: Armory
+--- !u!114 &-3671467578751036462
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c5d5ab9f120b74776af0cbceb16d278d, type: 3}
+  m_Name: Category_buyWeapons
+  m_EditorClassIdentifier: 
+  m_Id: buyWeapons
+  m_DisplayName: Buy Weapons
+--- !u!114 &-3015985782656024199
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d2da6fd8dcbc743878084f83ab49ad7c, type: 3}
+  m_Name: _Catalog_Currency
+  m_EditorClassIdentifier: 
+  m_Categories:
+  - {fileID: -1095227292113191704}
+  m_Database: {fileID: 11400000}
+  m_Items:
+  - {fileID: -2717323465436782769}
+  - {fileID: 8101233182970873087}
+  - {fileID: -5831284636934957225}
+--- !u!114 &-2998493372325328806
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b81b157322addcd439104bd3c59b830b, type: 3}
+  m_Name: Store_main
+  m_EditorClassIdentifier: 
+  m_DisplayName: Main
+  m_Id: main
+  m_Categories: []
+  m_Catalog: {fileID: 0}
+  m_DetailValues: []
+  m_StoreItems:
+  - m_Transaction: {fileID: 2898562373547699694}
+    m_Enabled: 1
+--- !u!114 &-2916772358758911014
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 188049432bcf74f78b314dc2b03ee516, type: 3}
+  m_Name: VirtualTransaction_buyIronSword
+  m_EditorClassIdentifier: 
+  m_DisplayName: Buy Iron Sword
+  m_Id: buyIronSword
+  m_Categories:
+  - {fileID: -3671467578751036462}
+  m_Catalog: {fileID: -7769226187106139398}
+  m_DetailValues:
+  - {fileID: 3610471334336164617}
+  m_Rewards:
+    m_Items:
+    - m_Item: {fileID: 5314962151299099236}
+      m_Amount: 1
+    m_Currencies: []
+  m_Costs:
+    m_Items: []
+    m_Currencies:
+    - m_Currency: {fileID: 8101233182970873087}
+      m_Amount: 3
+--- !u!114 &-2717323465436782769
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b6736b79f77dc474c8bc820c305c2c2e, type: 3}
+  m_Name: Currency_bronzeCoin
+  m_EditorClassIdentifier: 
+  m_DisplayName: Bronze Coin
+  m_Id: bronzeCoin
+  m_Categories:
+  - {fileID: -1095227292113191704}
+  m_Catalog: {fileID: -3015985782656024199}
+  m_DetailValues:
+  - {fileID: 3179460817678194435}
+  m_InitialBalance: 15
+  m_MaximumBalance: 0
+  m_Type: 0
+--- !u!114 &-2072034652887368622
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c5d5ab9f120b74776af0cbceb16d278d, type: 3}
+  m_Name: Category_player
+  m_EditorClassIdentifier: 
+  m_Id: player
+  m_DisplayName: Player
+--- !u!114 &-1969769542534439288
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 15cb36b4e39d04058878d632b15e1f5b, type: 3}
+  m_Name: Detail_rustySword_Analytics
+  m_EditorClassIdentifier: 
+  m_ItemDefinition: {fileID: 5314962151299099236}
+--- !u!114 &-1095227292113191704
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c5d5ab9f120b74776af0cbceb16d278d, type: 3}
+  m_Name: Category_money
+  m_EditorClassIdentifier: 
+  m_Id: money
+  m_DisplayName: Money
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b6d6d794703b5406883240f543e5b084, type: 3}
+  m_Name: GameFoundationDatabase
+  m_EditorClassIdentifier: 
+  m_InventoryCatalog: {fileID: 1413956987484401243}
+  m_StoreCatalog: {fileID: -5729993720074048865}
+  m_StatCatalog: {fileID: 1237923760488849413}
+  m_CurrencyCatalog: {fileID: -3015985782656024199}
+  m_TransactionCatalog: {fileID: -7769226187106139398}
+--- !u!114 &112370810052723042
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 500ed5e878d975f419dc9b9f03434383, type: 3}
+  m_Name: Stat_level
+  m_EditorClassIdentifier: 
+  m_Id: level
+  m_DisplayName: Level
+  m_StatValueType: 0
+--- !u!114 &274927182384471722
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 15cb36b4e39d04058878d632b15e1f5b, type: 3}
+  m_Name: Detail_silverCoin_Analytics
+  m_EditorClassIdentifier: 
+  m_ItemDefinition: {fileID: 8101233182970873087}
+--- !u!114 &1237923760488849413
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b88f5bccd054f984d9be6ad05294da40, type: 3}
+  m_Name: _Catalog_Stats
+  m_EditorClassIdentifier: 
+  m_StatDefinitions:
+  - {fileID: 2476705312563493796}
+  - {fileID: -7767012301083986000}
+  - {fileID: 8180324561091678115}
+  - {fileID: 112370810052723042}
+  m_Database: {fileID: 11400000}
+--- !u!114 &1413956987484401243
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 48b084f2c338a4185ab8badeed2a3947, type: 3}
+  m_Name: _Catalog_Inventories
+  m_EditorClassIdentifier: 
+  m_Categories:
+  - {fileID: -7904654559483738550}
+  - {fileID: -2072034652887368622}
+  m_Database: {fileID: 11400000}
+  m_Items:
+  - {fileID: 5314962151299099236}
+  - {fileID: 6887271508390812012}
+--- !u!114 &1765623614628575216
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ef78d1e65e02740dca774d4b2d1ecad2, type: 3}
+  m_Name: Detail_rustySword_Assets
+  m_EditorClassIdentifier: 
+  m_ItemDefinition: {fileID: 5314962151299099236}
+  m_Names:
+  - Icon
+  m_Values:
+  - Weapons/weapon_rusty_sword
+--- !u!114 &1945880640534693821
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0045a420c8b2b474eb4c14cf512c1cb5, type: 3}
+  m_Name: Detail_rustySword_Stats
+  m_EditorClassIdentifier: 
+  m_ItemDefinition: {fileID: 5314962151299099236}
+  m_StatEntries:
+  - stat: {fileID: 8180324561091678115}
+    value:
+      m_Type: 0
+      m_IntValue: 2
+  - stat: {fileID: 2476705312563493796}
+    value:
+      m_Type: 0
+      m_IntValue: 5
+  - stat: {fileID: -7767012301083986000}
+    value:
+      m_Type: 0
+      m_IntValue: 2
+  - stat: {fileID: 112370810052723042}
+    value:
+      m_Type: 0
+      m_IntValue: 1
+--- !u!114 &2476705312563493796
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 500ed5e878d975f419dc9b9f03434383, type: 3}
+  m_Name: Stat_attack
+  m_EditorClassIdentifier: 
+  m_Id: attack
+  m_DisplayName: Attack
+  m_StatValueType: 0
+--- !u!114 &2562539833650468713
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 15cb36b4e39d04058878d632b15e1f5b, type: 3}
+  m_Name: Detail_goldCoin_Analytics
+  m_EditorClassIdentifier: 
+  m_ItemDefinition: {fileID: -5831284636934957225}
+--- !u!114 &2898562373547699694
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 188049432bcf74f78b314dc2b03ee516, type: 3}
+  m_Name: VirtualTransaction_heroMain
+  m_EditorClassIdentifier: 
+  m_DisplayName: Hero Main
+  m_Id: heroMain
+  m_Categories: []
+  m_Catalog: {fileID: -7769226187106139398}
+  m_DetailValues: []
+  m_Rewards:
+    m_Items:
+    - m_Item: {fileID: 6887271508390812012}
+      m_Amount: 1
+    m_Currencies: []
+  m_Costs:
+    m_Items: []
+    m_Currencies: []
+--- !u!114 &3179460817678194435
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 15cb36b4e39d04058878d632b15e1f5b, type: 3}
+  m_Name: Detail_bronzeCoin_Analytics
+  m_EditorClassIdentifier: 
+  m_ItemDefinition: {fileID: -2717323465436782769}
+--- !u!114 &3610471334336164617
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 15cb36b4e39d04058878d632b15e1f5b, type: 3}
+  m_Name: Detail_buyIronSword_Analytics
+  m_EditorClassIdentifier: 
+  m_ItemDefinition: {fileID: -2916772358758911014}
+--- !u!114 &5314962151299099236
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fcbd052539327467295d2009d33aa660, type: 3}
+  m_Name: Item_rustySword
+  m_EditorClassIdentifier: 
+  m_DisplayName: Rusty Sword
+  m_Id: rustySword
+  m_Categories:
+  - {fileID: -7904654559483738550}
+  m_Catalog: {fileID: 1413956987484401243}
+  m_DetailValues:
+  - {fileID: -1969769542534439288}
+  - {fileID: 1945880640534693821}
+  - {fileID: 1765623614628575216}
+--- !u!114 &6887271508390812012
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fcbd052539327467295d2009d33aa660, type: 3}
+  m_Name: Item_playerHero
+  m_EditorClassIdentifier: 
+  m_DisplayName: Player Hero
+  m_Id: playerHero
+  m_Categories:
+  - {fileID: -2072034652887368622}
+  m_Catalog: {fileID: 1413956987484401243}
+  m_DetailValues:
+  - {fileID: -7862747356165092517}
+--- !u!114 &8101233182970873087
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b6736b79f77dc474c8bc820c305c2c2e, type: 3}
+  m_Name: Currency_silverCoin
+  m_EditorClassIdentifier: 
+  m_DisplayName: Silver Coin
+  m_Id: silverCoin
+  m_Categories:
+  - {fileID: -1095227292113191704}
+  m_Catalog: {fileID: -3015985782656024199}
+  m_DetailValues:
+  - {fileID: 274927182384471722}
+  m_InitialBalance: 3
+  m_MaximumBalance: 0
+  m_Type: 0
+--- !u!114 &8180324561091678115
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 500ed5e878d975f419dc9b9f03434383, type: 3}
+  m_Name: Stat_agility
+  m_EditorClassIdentifier: 
+  m_Id: agility
+  m_DisplayName: Agility
+  m_StatValueType: 0
