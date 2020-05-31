@@ -4,11 +4,14 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.GameFoundation;
 using UnityEngine.InputSystem;
+using UnityEngine.Rendering;
 
 public class WeaponInit : MonoBehaviour
 {
     //  Scriptable Object
     public Weapon weapon;
+    //  Public vars
+    public Animator animator;
     //  Weapon stats
     int attack;
     int defense;
@@ -17,6 +20,7 @@ public class WeaponInit : MonoBehaviour
     // Cache properties
     SpriteRenderer spriteRender;
     new BoxCollider2D collider;
+
 
     // Start is called before the first frame update
     void Awake()
@@ -44,39 +48,20 @@ public class WeaponInit : MonoBehaviour
         Debug.Log("weapon stats loaded" + attack);
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    public void OnAttack()
     {
-        if (collision.tag == "Player" && !hasWeapon)
-        {
-            Pickup(collision.gameObject);
-        }
-        if (collision.tag == "Enemy" && hasWeapon)
-        {
-            //Pickup(collision.gameObject);
-        }
-        Debug.Log(collision.name);
+        animator.SetTrigger("attack");
     }
 
-    private void Update()
-    {
-        if (hasWeapon)
-        {
-            Vector3 dir = Input.mousePosition - Camera.main.WorldToScreenPoint(transform.parent.position);
-            float angle = Mathf.Atan2(dir.y, dir.x);
-            transform.rotation = Quaternion.AngleAxis(angle * Mathf.Rad2Deg - 90, Vector3.forward);
-            transform.position = transform.parent.position + new Vector3(Mathf.Cos(angle)/2, Mathf.Sin(angle)/2, 0f);
-        }
-    }
+    //private void Update()
+    //{
+    //    if (hasWeapon)
+    //    {
+    //        Vector3 dir = Input.mousePosition - Camera.main.WorldToScreenPoint(transform.parent.position);
+    //        float angle = Mathf.Atan2(dir.y, dir.x);
+    //        transform.rotation = Quaternion.AngleAxis(angle * Mathf.Rad2Deg - 90, Vector3.forward);
+    //        transform.position = transform.parent.position + new Vector3(Mathf.Cos(angle)/2, Mathf.Sin(angle)/2, 0f);
+    //    }
+    //}
 
-    bool hasWeapon = false;
-    void Pickup(GameObject player)
-    {
-        InventoryManager.CreateItem(weapon.inventoryID);
-        //StatManager.AdjustValue("playerHero", "attack", )
-        //transform.position = Vector3.zero;
-        transform.parent = player.transform;
-        transform.position = player.transform.position;
-        hasWeapon = true;
-        //transform.LookAt(new Vector3(Mouse.current.position.x.ReadValue(), Mouse.current.position.y.ReadValue(), 0f));
-    }
 }
