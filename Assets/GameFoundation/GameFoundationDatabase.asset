@@ -138,6 +138,21 @@ MonoBehaviour:
   m_StoreItems:
   - m_Transaction: {fileID: -2916772358758911014}
     m_Enabled: 1
+--- !u!114 &-5373966402871573325
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 500ed5e878d975f419dc9b9f03434383, type: 3}
+  m_Name: Stat_attackRange
+  m_EditorClassIdentifier: 
+  m_Id: attackRange
+  m_DisplayName: Attack Range
+  m_StatValueType: 1
 --- !u!114 &-4958130180231182382
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -359,6 +374,7 @@ MonoBehaviour:
   - {fileID: -7767012301083986000}
   - {fileID: 8180324561091678115}
   - {fileID: 112370810052723042}
+  - {fileID: -5373966402871573325}
   m_Database: {fileID: 11400000}
 --- !u!114 &1413956987484401243
 MonoBehaviour:
@@ -426,6 +442,10 @@ MonoBehaviour:
     value:
       m_Type: 0
       m_IntValue: 1
+  - stat: {fileID: -5373966402871573325}
+    value:
+      m_Type: 1
+      m_IntValue: 1053609165
 --- !u!114 &2476705312563493796
 MonoBehaviour:
   m_ObjectHideFlags: 0

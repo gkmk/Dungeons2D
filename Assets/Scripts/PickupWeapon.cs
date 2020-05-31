@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.GameFoundation;
 
 public class PickupWeapon : MonoBehaviour
 {
@@ -10,12 +11,11 @@ public class PickupWeapon : MonoBehaviour
         {
             Pickup(collision.gameObject);
         }
-        Debug.Log(collision.name);
     }
 
     void Pickup(GameObject weapon)
     {
-        //InventoryManager.CreateItem(weapon.inventoryID);
+        InventoryManager.CreateItem(weapon.GetComponent<WeaponHandler>().weapon.inventoryID);
         weapon.transform.parent = transform;
         weapon.transform.position = transform.position;
     }

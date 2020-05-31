@@ -29,12 +29,12 @@ public class GFInit : MonoBehaviour
     {
         // Creates a new data layer for Game Foundation,
         // with the default parameters.
-        dataLayer = new PersistenceDataLayer(
-                new LocalPersistence("game_foundation", new JsonDataSerializer()));// MemoryDataLayer();
+        //dataLayer = new PersistenceDataLayer(
+        //        new LocalPersistence("game_foundation", new JsonDataSerializer()));// MemoryDataLayer();
 
         // Initializes Game Foundation with the data layer.
         GameFoundation.Initialize
-            (dataLayer, OnInitSucceeded, OnInitFailed);
+            (new MemoryDataLayer(), OnInitSucceeded, OnInitFailed);
     }
 
     // Called when Game Foundation is successfully

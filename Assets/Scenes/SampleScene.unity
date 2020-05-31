@@ -220,6 +220,8 @@ GameObject:
   - component: {fileID: 76647907}
   - component: {fileID: 76647906}
   - component: {fileID: 76647908}
+  - component: {fileID: 76647910}
+  - component: {fileID: 76647909}
   m_Layer: 0
   m_Name: Walls
   m_TagString: Untagged
@@ -1439,10 +1441,85 @@ TilemapCollider2D:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_UsedByEffector: 0
-  m_UsedByComposite: 0
+  m_UsedByComposite: 1
   m_Offset: {x: 0, y: 0}
   m_MaximumTileChangeCount: 1000
   m_ExtrusionFactor: 0.00001
+--- !u!66 &76647909
+CompositeCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 76647904}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_GeometryType: 0
+  m_GenerationType: 0
+  m_EdgeRadius: 0
+  m_ColliderPaths:
+  - m_Collider: {fileID: 76647908}
+    m_ColliderPaths:
+    - - X: 70000000
+        Y: 53750000
+      - X: -70000000
+        Y: 53750000
+      - X: -70000000
+        Y: -60000000
+      - X: 70000000
+        Y: -60000000
+    - - X: -60000000
+        Y: -46250000
+      - X: -65625000
+        Y: -40000000
+      - X: -65625000
+        Y: 20000000
+      - X: 65625000
+        Y: 20000000
+      - X: 65625000
+        Y: -40000000
+      - X: 60000000
+        Y: -46250000
+  m_CompositePaths:
+    m_Paths:
+    - - {x: 6.9999704, y: -6}
+      - {x: 6.9999704, y: 5.375}
+      - {x: -7, y: 5.374971}
+      - {x: -6.9999704, y: -6}
+    - - {x: 6.000008, y: -4.6249914}
+      - {x: -6.000008, y: -4.6249914}
+      - {x: -6.5625, y: -3.99999}
+      - {x: -6.5624704, y: 2}
+      - {x: 6.5625, y: 1.9999707}
+      - {x: 6.5624933, y: -4.000007}
+  m_VertexDistance: 0.0005
+  m_OffsetDistance: 0.00005
+--- !u!50 &76647910
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 76647904}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &306346241
 GameObject:
   m_ObjectHideFlags: 0
@@ -1742,18 +1819,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: -4222922303920037733, guid: a220fb060276ec942a126d3da143d780, type: 3}
-      propertyPath: m_CollisionDetection
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 927662940, guid: a220fb060276ec942a126d3da143d780, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -0.31
-      objectReference: {fileID: 0}
-    - target: {fileID: 7017943364476424611, guid: a220fb060276ec942a126d3da143d780, type: 3}
-      propertyPath: MoveSpeed
-      value: 8
-      objectReference: {fileID: 0}
     - target: {fileID: 7017943364476424614, guid: a220fb060276ec942a126d3da143d780, type: 3}
       propertyPath: m_LocalPosition.x
       value: -2.37
@@ -1801,10 +1866,6 @@ PrefabInstance:
     - target: {fileID: 7017943364476424617, guid: a220fb060276ec942a126d3da143d780, type: 3}
       propertyPath: m_Name
       value: Hero
-      objectReference: {fileID: 0}
-    - target: {fileID: 8604314578820823173, guid: a220fb060276ec942a126d3da143d780, type: 3}
-      propertyPath: m_IsActive
-      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a220fb060276ec942a126d3da143d780, type: 3}
@@ -3138,6 +3199,10 @@ PrefabInstance:
     - target: {fileID: 5090342580459819518, guid: abdfe58302961894ead8746a5f279a6b, type: 3}
       propertyPath: m_Name
       value: Enemy
+      objectReference: {fileID: 0}
+    - target: {fileID: 6984707162721207155, guid: abdfe58302961894ead8746a5f279a6b, type: 3}
+      propertyPath: maxHealth
+      value: 35
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: abdfe58302961894ead8746a5f279a6b, type: 3}

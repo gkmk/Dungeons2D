@@ -14,4 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: Rusty Sword
   icon: {fileID: 21300000, guid: 28a18b56b3d1651448e828a4e2e66124, type: 3}
+  hitAudio: {fileID: 8300000, guid: 0e750b2cba55ae443a76a0343b788159, type: 3}
   inventoryID: rustySword

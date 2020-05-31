@@ -1,26 +1,26 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.GameFoundation;
-using UnityEngine.InputSystem;
-using UnityEngine.Rendering;
 
-public class WeaponInit : MonoBehaviour
+public class WeaponHandler : MonoBehaviour
 {
     //  Scriptable Object
     public Weapon weapon;
     //  Public vars
     public Animator animator;
+    public Transform attackPoint;
+    public LayerMask enemyLayers;
     //  Weapon stats
     int attack;
     int defense;
     int agility;
     int level;
+    float attackRange;
+    //  Private vars
+    float nextAttackTime = 0f;
     // Cache properties
     SpriteRenderer spriteRender;
     new BoxCollider2D collider;
-
+    AudioSource hitAudio;
 
     // Start is called before the first frame update
     void Awake()
@@ -33,6 +33,10 @@ public class WeaponInit : MonoBehaviour
         collider = GetComponent<BoxCollider2D>();
         collider.size = spriteRender.sprite.bounds.size;
 
+        //  Setup audio hit clip
+        hitAudio = GetComponent<AudioSource>();
+        hitAudio.clip = weapon.hitAudio;
+
         //  Load weapon stats
         GameEvents.Current.OnGFInitialized += LoadWeaponStats;
     }
@@ -42,6 +46,7 @@ public class WeaponInit : MonoBehaviour
         var item = GameFoundation.catalogs.inventoryCatalog.FindItem(weapon.inventoryID);
         var stats = item.GetDetail<StatDetail>();
         attack = stats.GetDefaultValue("attack");
+        attackRange = stats.GetDefaultValue("attackRange");
         defense = stats.GetDefaultValue("defense");
         agility = stats.GetDefaultValue("agility");
         level = stats.GetDefaultValue("level");
@@ -50,7 +55,25 @@ public class WeaponInit : MonoBehaviour
 
     public void OnAttack()
     {
+        if (Time.time < nextAttackTime) return;
+
         animator.SetTrigger("attack");
+        hitAudio.Play();
+
+        var enemies = Physics2D.OverlapCircleAll(attackPoint.position, attackRange, enemyLayers);
+
+        foreach (var enemy in enemies)
+        {
+            Debug.Log("HIT: " + enemy.name);
+            enemy.GetComponent<Health>().TakeDamage(attack);
+        }
+        nextAttackTime = Time.time + 1f / agility;
+    }
+
+    private void OnDrawGizmosSelected()
+    {
+        if (attackPoint == null) return;
+        Gizmos.DrawWireSphere(attackPoint.position, attackRange);
     }
 
     //private void Update()

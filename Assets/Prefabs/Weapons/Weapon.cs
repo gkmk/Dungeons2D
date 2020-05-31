@@ -6,6 +6,7 @@ public class Weapon : ScriptableObject
     //  Prefab Attributes
     public new string name;
     public Sprite icon;
+    public AudioClip hitAudio;
 
     // Inventory System Params
     public string inventoryID;
