@@ -14,12 +14,21 @@ public class Health : MonoBehaviour
 
     public int TakeDamage(int damage)
     {
-        if (_currentHealth > 0)
+        _currentHealth -= damage;
+
+        if (_currentHealth <= 0)
         {
-            _currentHealth -= damage;
-            return _currentHealth;
+            _currentHealth = 0;
+            Die();
         }
-        return 0;
+        return _currentHealth;
+    }
+
+    void Die()
+    {
+        GetComponent<Collider2D>().enabled = false;
+        transform.rotation = Quaternion.AngleAxis(90, Vector3.forward);
+        this.enabled = false;
     }
 
     public int Heal(int heal)

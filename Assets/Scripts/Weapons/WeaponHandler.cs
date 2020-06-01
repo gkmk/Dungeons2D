@@ -7,16 +7,13 @@ public class WeaponHandler : MonoBehaviour
     public Weapon weapon;
     //  Public vars
     public Animator animator;
-    public Transform attackPoint;
-    public LayerMask enemyLayers;
     //  Weapon stats
     int attack;
     int defense;
     int agility;
     int level;
-    float attackRange;
     //  Private vars
-    float nextAttackTime = 0f;
+    
     // Cache properties
     SpriteRenderer spriteRender;
     new BoxCollider2D collider;
@@ -41,39 +38,41 @@ public class WeaponHandler : MonoBehaviour
         GameEvents.Current.OnGFInitialized += LoadWeaponStats;
     }
 
+    public int GetAttackModifier()
+    {
+        return attack;
+    }
+
+    public int GetAgilityModifier()
+    {
+        return agility;
+    }
+    
+    public int GetDefenseModifier()
+    {
+        return defense;
+    }
+
+    public int GetRequiredLevel()
+    {
+        return level;
+    }
+
     private void LoadWeaponStats()
     {
         var item = GameFoundation.catalogs.inventoryCatalog.FindItem(weapon.inventoryID);
         var stats = item.GetDetail<StatDetail>();
         attack = stats.GetDefaultValue("attack");
-        attackRange = stats.GetDefaultValue("attackRange");
         defense = stats.GetDefaultValue("defense");
         agility = stats.GetDefaultValue("agility");
         level = stats.GetDefaultValue("level");
         Debug.Log("weapon stats loaded" + attack);
     }
 
-    public void OnAttack()
+    public void Attack()
     {
-        if (Time.time < nextAttackTime) return;
-
         animator.SetTrigger("attack");
         hitAudio.Play();
-
-        var enemies = Physics2D.OverlapCircleAll(attackPoint.position, attackRange, enemyLayers);
-
-        foreach (var enemy in enemies)
-        {
-            Debug.Log("HIT: " + enemy.name);
-            enemy.GetComponent<Health>().TakeDamage(attack);
-        }
-        nextAttackTime = Time.time + 1f / agility;
-    }
-
-    private void OnDrawGizmosSelected()
-    {
-        if (attackPoint == null) return;
-        Gizmos.DrawWireSphere(attackPoint.position, attackRange);
     }
 
     //private void Update()

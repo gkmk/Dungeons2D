@@ -41,7 +41,6 @@ public class GFInit : MonoBehaviour
     // initialized.
     void OnInitSucceeded()
     {
-        Debug.Log("Game Foundation is successfully initialized");
         GameEvents.Current.GFInitialized();
     }
 

@@ -2,17 +2,19 @@
 using UnityEngine.InputSystem;
 public class PlayerController2DTop : MonoBehaviour
 {
-    public float MoveSpeed = 10f;
-    public Transform WeaponHolder;
+    //  Public vars
+    public float moveSpeed = 10f;
 
+    //  Private vars
+
+    //  Cached objects
     private Rigidbody2D rb2D;
     private Vector2 velocity;
-    private SpriteRenderer spriteRenderer;
     private Animator animator;
+
     void Awake()
     {
         rb2D = GetComponent<Rigidbody2D>();
-        spriteRenderer = GetComponent<SpriteRenderer>();
         animator = GetComponent<Animator>();
     }
 
@@ -20,7 +22,7 @@ public class PlayerController2DTop : MonoBehaviour
     {
         // calculate moving direction and speed
         var value = context.Get<Vector2>();
-        velocity = value * MoveSpeed;
+        velocity = value * moveSpeed;
 
         //  should i flip (moving left/right)
         if (value.x > 0)
