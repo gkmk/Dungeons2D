@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 
 public class AttackHandler : MonoBehaviour
 {
@@ -6,26 +7,30 @@ public class AttackHandler : MonoBehaviour
     public Transform attackPoint;
     public float attackRange = 0.5f;
     public LayerMask enemyLayers;
+    public Text statsText;
+
     //  Weapon modifiers
     public int attackModifier;
     public int agilityModifier;
+    public int defenseModifier;
     //  Private vars
     float nextAttackTime = 0f;
     PlayerStats playerStats;
 
-    /**
-     * Initialize components
-     * 
-     */
+    /// <summary>
+    /// Initialize components
+    /// </summary>
     private void Start()
     {
         playerStats = GetComponent<PlayerStats>();
+
+        statsText.text = "Attack " + playerStats.attack + " | Defense " + playerStats.defense;
     }
 
-    /**
-     * Handle attack
-     * 
-     */
+    /// <summary>
+    /// Handle attack. Check attack times based on agility and apply damage
+    /// based on character and weapon stats.
+    /// </summary>
     public void OnAttack()
     {
         //  Can i attack at this time?
@@ -38,7 +43,7 @@ public class AttackHandler : MonoBehaviour
         var enemies = Physics2D.OverlapCircleAll(attackPoint.position, attackRange, enemyLayers);
         foreach (var enemy in enemies)
         {
-            enemy.GetComponent<Health>().TakeDamage(playerStats.attack + attackModifier);
+            enemy.GetComponent<HealthHandler>().TakeDamage(playerStats.attack + attackModifier);
         }
 
         //  Get next attack time based of agility (weapon or hero)
@@ -46,20 +51,22 @@ public class AttackHandler : MonoBehaviour
         nextAttackTime = Time.time + 1f / playerStats.agility;
     }
 
-    /**
-     * Set the modifiers based of weapon
-     * 
-     */
+    /// <summary>
+    /// Set the modifiers based of weapon
+    /// </summary>
+    /// <param name="weaponStats"></param>
     public void SetModifiers(WeaponHandler weaponStats)
     {
         attackModifier = weaponStats.GetAttackModifier();
         agilityModifier = weaponStats.GetAgilityModifier();
+        defenseModifier = weaponStats.GetDefenseModifier();
+
+        statsText.text = "Attack " + (playerStats.attack+ attackModifier) + " | Defense " + (playerStats.defense+ defenseModifier);
     }
 
-    /**
-     * Debug helper function to see attack range
-     * 
-     */
+    /// <summary>
+    /// Debug helper function to see attack range
+    /// </summary>
     private void OnDrawGizmosSelected()
     {
         if (attackPoint == null) return;

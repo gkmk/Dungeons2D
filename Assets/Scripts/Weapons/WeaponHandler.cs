@@ -19,7 +19,6 @@ public class WeaponHandler : MonoBehaviour
     new BoxCollider2D collider;
     AudioSource hitAudio;
 
-    // Start is called before the first frame update
     void Awake()
     {
         //  Initialize weapon sprite
@@ -58,6 +57,10 @@ public class WeaponHandler : MonoBehaviour
         return level;
     }
 
+    /// <summary>
+    /// Load the stats for the current weapon based of Inventory ID
+    /// The weapon stats are defined inside Game Foundation Items
+    /// </summary>
     private void LoadWeaponStats()
     {
         var item = GameFoundation.catalogs.inventoryCatalog.FindItem(weapon.inventoryID);
@@ -69,6 +72,9 @@ public class WeaponHandler : MonoBehaviour
         Debug.Log("weapon stats loaded" + attack);
     }
 
+    /// <summary>
+    /// Attack function of the current weapon
+    /// </summary>
     public void Attack()
     {
         animator.SetTrigger("attack");

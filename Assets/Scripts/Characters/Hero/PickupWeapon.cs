@@ -14,7 +14,7 @@ public class PickupWeapon : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.tag == "Weapon")
+        if (collision.CompareTag("Weapon"))
         {
             Pickup(collision.gameObject);
         }
